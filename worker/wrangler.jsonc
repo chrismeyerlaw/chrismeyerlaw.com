@@ -14,5 +14,8 @@
   "assets": {
   "directory": "../fontend/dist/chrismeyerlaw/browser",
   "binding": "ASSETS"
+},
+"vars": {
+  "CONTACT_TO_EMAIL": "chris@chrismeyerlaw.com"
 }
 }
