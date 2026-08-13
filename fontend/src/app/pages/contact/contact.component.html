@@ -1,0 +1,19 @@
+<form [formGroup]="contactForm" (ngSubmit)="sendEmail()">
+  <input type="text" formControlName="name" placeholder="Name" required />
+
+  <input type="email" formControlName="email" placeholder="Your Email" required />
+
+  <select formControlName="topic">
+    <option value="estate">Estate Planning</option>
+    <option value="other">Other</option>
+  </select>
+
+  <textarea formControlName="message" placeholder="Message"></textarea>
+
+  <button type="submit" [disabled]!="contactForm.invalid">Send</button>
+</form>
+<div class="footer">
+  <span>Meyer Law LLC</span> &bull;
+  <span>513.338.4199</span> &bull;
+  <a href="mailto:chris&#64;chrismeyerlaw.com">chris&#64;chrismeyerlaw.com</a>
+</div>

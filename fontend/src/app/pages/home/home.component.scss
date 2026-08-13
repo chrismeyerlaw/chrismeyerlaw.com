@@ -1,0 +1,83 @@
+.profile-pic-placeholder {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: #fff;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 4px solid #b0b3b8;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.profile-pic-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: justify;
+  width: 75%;
+  max-width: 100%;
+}
+
+.about-text h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.about-text p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .about-text p {
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+  }
+}
+
+.footer {
+  width: 100%;
+  text-align: center;
+  padding: 1.2rem 0 0.8rem 0;
+  color: #b0b3b8;
+  font-size: 1rem;
+  margin-top: 2rem;
+}
+
+.footer a {
+  color: #b0b3b8;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.footer a:hover {
+  color: #fff;
+}

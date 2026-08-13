@@ -1,0 +1,31 @@
+.navbar-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: 100%;
+}
+
+.navbar-wrapper nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: flex-start;
+  padding: 2rem 1rem;
+}
+
+.navbar-wrapper a {
+  display: block;
+  color: #b0b3b8;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: color 0.2s, background 0.2s;
+  padding: 1rem 1.5rem;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+
+.navbar-wrapper a:hover,
+.navbar-wrapper a.active {
+  color: #fff;
+  background: rgba(255,255,255,0.08);
+}
