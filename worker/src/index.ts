@@ -30,7 +30,9 @@ export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url);
 
-    // Handle contact form API
+    /*
+     * CONTACT FORM API
+     */
     if (url.pathname === '/api/contact') {
       if (request.method === 'OPTIONS') {
         return new Response(null, {
@@ -74,6 +76,7 @@ export default {
 
       try {
         const data: ContactForm = await request.json();
+
         const { name, email, topic, message } = data;
 
         if (!name || !email || !topic || !message) {
@@ -160,7 +163,26 @@ ${message}`,
       }
     }
 
-    // Everything else goes to the Angular application.
-    return env.ASSETS.fetch(request);
+    /*
+     * ANGULAR WEBSITE
+     *
+     * For normal browser requests, ask Cloudflare Assets
+     * for the requested file. If it doesn't exist, Angular's
+     * index.html is returned so Angular can handle the route.
+     */
+
+    const assetResponse = await env.ASSETS.fetch(request);
+
+    if (assetResponse.status !== 404) {
+      return assetResponse;
+    }
+
+    // Angular SPA fallback
+    const indexRequest = new Request(
+      new URL('/index.html', request.url),
+      request
+    );
+
+    return env.ASSETS.fetch(indexRequest);
   },
 };
