@@ -29,7 +29,7 @@ export class ContactComponent {
 
     const formData = this.contactForm.value;
 
-    fetch('/api/contact', {
+     fetch('/api/contact', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
