@@ -12,8 +12,7 @@
   "upload_source_maps": true,
 
   "assets": {
-    "directory": "../fontend/dist/chrismeyerlaw",
-    "binding": "ASSETS",
-    "not_found_handling": "single-page-application"
-  }
+  "directory": "../fontend/dist/chrismeyerlaw/browser",
+  "binding": "ASSETS"
+}
 }
